@@ -3,11 +3,11 @@ using System.Text;
 
 namespace Personal_Information;
 
-public class AcccessInformation
+public class AccessInformation
 {
-    private ICollection<Credential> _credentials;
+    private readonly ICollection<Credential> _credentials;
 
-    public AcccessInformation()
+    public AccessInformation()
     {
         _credentials = new HashSet<Credential>();
     }

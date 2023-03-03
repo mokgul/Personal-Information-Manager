@@ -4,33 +4,18 @@ namespace Personal_Information;
 
 public class Credential
 {
-    private string _domain;
-    private string _username;
-    private string _password;
-    
     public Credential(string domain, string username, string password)
     {
-        _domain = domain;
-        _username = username;
-        _password = password;
+        Domain = domain;
+        Username = username;
+        Password = password;
         
     }
-    public string Domain
-    {
-        get => _domain;
-        set => _domain = value;
-    }
-    public string Username 
-    {
-        get => _username;
-        set => _username = value;
-    }
+    public string Domain { get; set; }
 
-    public string Password
-    {
-        get => _password; 
-        set => _password = value;
-    }
+    public string Username { get; set; }
+
+    public string Password { get; set; }
 
     public override string ToString()
     {

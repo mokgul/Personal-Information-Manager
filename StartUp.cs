@@ -11,7 +11,7 @@ namespace Personal_Information
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            AcccessInformation information = new AcccessInformation();
+            AccessInformation information = new AccessInformation();
             information.Credentials.Add(new Credential("fb:", "pencho","123"));
             information.Credentials.Add(new Credential("fb:", "pencho2","123"));
             information.Credentials.Add(new Credential("fb:", "pencho3","123"));
