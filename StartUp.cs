@@ -17,7 +17,7 @@ namespace Personal_Information
             information.Credentials.Add(new Credential("fb:", "pencho3","123"));
             information.Credentials.Add(new Credential("fb:", "pencho4","123"));
             information.Credentials.Add(new Credential("fb:", "pencho5","123"));
-            Application.Run(new Form1(information));
+            Application.Run(new ManagerWindow(information));
 
 
         }

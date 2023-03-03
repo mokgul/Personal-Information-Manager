@@ -1,6 +1,6 @@
 ﻿namespace Personal_Information
 {
-    partial class Form1
+    partial class ManagerWindow
     {
         /// <summary>
         ///  Required designer variable.
@@ -42,6 +42,11 @@
             domainToolStripMenuItem = new ToolStripMenuItem();
             usernameToolStripMenuItem = new ToolStripMenuItem();
             passwordToolStripMenuItem = new ToolStripMenuItem();
+            filterToolStripMenuItem = new ToolStripMenuItem();
+            byDomainToolStripMenuItem = new ToolStripMenuItem();
+            byUsernameToolStripMenuItem = new ToolStripMenuItem();
+            byPasswordToolStripMenuItem = new ToolStripMenuItem();
+            refreshToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -104,7 +109,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { addItemToolStripMenuItem, removeItemToolStripMenuItem, updateItemToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { addItemToolStripMenuItem, removeItemToolStripMenuItem, updateItemToolStripMenuItem, filterToolStripMenuItem, refreshToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(783, 24);
@@ -153,6 +158,40 @@
             passwordToolStripMenuItem.Text = "Password";
             passwordToolStripMenuItem.Click += passwordToolStripMenuItem_Click;
             // 
+            // filterToolStripMenuItem
+            // 
+            filterToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { byDomainToolStripMenuItem, byUsernameToolStripMenuItem, byPasswordToolStripMenuItem });
+            filterToolStripMenuItem.Name = "filterToolStripMenuItem";
+            filterToolStripMenuItem.Size = new Size(84, 20);
+            filterToolStripMenuItem.Text = "Filter";
+            // 
+            // byDomainToolStripMenuItem
+            // 
+            byDomainToolStripMenuItem.Name = "byDomainToolStripMenuItem";
+            byDomainToolStripMenuItem.Size = new Size(127, 22);
+            byDomainToolStripMenuItem.Text = "By Domain";
+            byDomainToolStripMenuItem.Click += byDomainToolStripMenuItem_Click;
+            // 
+            // byUsernameToolStripMenuItem
+            // 
+            byUsernameToolStripMenuItem.Name = "byUsernameToolStripMenuItem";
+            byUsernameToolStripMenuItem.Size = new Size(127, 22);
+            byUsernameToolStripMenuItem.Text = "By Username";
+            byUsernameToolStripMenuItem.Click += byUsernameToolStripMenuItem_Click;
+            // 
+            // byPasswordToolStripMenuItem
+            byPasswordToolStripMenuItem.Name = "byPasswordToolStripMenuItem";
+            byPasswordToolStripMenuItem.Size = new Size(127, 22);
+            byPasswordToolStripMenuItem.Text = "By Password";
+            byPasswordToolStripMenuItem.Click += byPasswordToolStripMenuItem_Click;
+            //
+            //refreshToolStripMenuItem
+            refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            refreshToolStripMenuItem.Size = new Size(84, 20);
+            refreshToolStripMenuItem.Text = "Refresh";
+            refreshToolStripMenuItem.Click += refreshToolStripMenuItem_Click;
+            //
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -189,5 +228,11 @@
         private ToolStripMenuItem domainToolStripMenuItem;
         private ToolStripMenuItem usernameToolStripMenuItem;
         private ToolStripMenuItem passwordToolStripMenuItem;
+        private ToolStripMenuItem filterToolStripMenuItem;
+        private ToolStripMenuItem byDomainToolStripMenuItem;
+        private ToolStripMenuItem byUsernameToolStripMenuItem;
+        private ToolStripMenuItem byPasswordToolStripMenuItem;
+        private ToolStripMenuItem refreshToolStripMenuItem;
+
     }
 }

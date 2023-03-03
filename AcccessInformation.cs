@@ -1,4 +1,5 @@
-﻿using System.DirectoryServices.ActiveDirectory;
+﻿using Microsoft.VisualBasic;
+using System.DirectoryServices.ActiveDirectory;
 using System.Text;
 
 namespace Personal_Information;
@@ -14,33 +15,20 @@ public class AccessInformation
     public ICollection<Credential> Credentials => _credentials;
 
     public void AddCredential(Credential credential)
-    {
-        _credentials.Add(credential);
-    }
+    =>_credentials.Add(credential);
 
-    public Credential GetSingleCredential(string domain)
-        => (Credential)_credentials.Where(c => c.Domain == domain);
+    public void UpdateDomain(Credential credential, string domain)
+    => credential!.Domain = domain;
 
-    public void UpdateDomain(string domain)
-    {
-        var credential = this.GetSingleCredential(domain);
-        credential.Domain = domain;
-    }
+    public void UpdateUsername(Credential credential, string username)
+    => credential.Username = username;
 
-    public void UpdateUsername(string username)
-    {
-        var credential = this.GetSingleCredential(username);
-        credential.Username = username;
-    }
-
-    public void UpdatePassword(string password)
-    {
-        var credential = this.GetSingleCredential(password);
-        credential.Password = password;
-    }
+    public void UpdatePassword(Credential credential, string password) => credential.Password = password;
 
     public void DeleteCredential(Credential credential)
     => _credentials.Remove(credential);
-
+    
+    public ICollection<Credential> GetCredentialsByDomain(string domain)
+        => (ICollection<Credential>)_credentials.Where(c => c.Domain == domain);
 }
 
