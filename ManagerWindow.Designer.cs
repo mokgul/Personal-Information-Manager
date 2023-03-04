@@ -1,4 +1,6 @@
-﻿namespace Personal_Information
+﻿using Microsoft.VisualBasic.ApplicationServices;
+
+namespace Personal_Information
 {
     partial class ManagerWindow
     {
@@ -65,6 +67,7 @@
             DomainBox.Name = "DomainBox";
             DomainBox.Size = new Size(270, 23);
             DomainBox.TabIndex = 3;
+            DomainBox.KeyPress += DomainBox_KeyPress;
             // 
             // UsernameBox
             // 
@@ -72,6 +75,7 @@
             UsernameBox.Name = "UsernameBox";
             UsernameBox.Size = new Size(201, 23);
             UsernameBox.TabIndex = 4;
+            UsernameBox.KeyPress += UsernameBox_KeyPress;
             // 
             // PasswordBox
             // 
@@ -79,6 +83,7 @@
             PasswordBox.Name = "PasswordBox";
             PasswordBox.Size = new Size(199, 23);
             PasswordBox.TabIndex = 5;
+            PasswordBox.KeyPress += PasswordBox_KeyPress;
             // 
             // label1
             // 
@@ -162,37 +167,38 @@
             // 
             filterToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { byDomainToolStripMenuItem, byUsernameToolStripMenuItem, byPasswordToolStripMenuItem });
             filterToolStripMenuItem.Name = "filterToolStripMenuItem";
-            filterToolStripMenuItem.Size = new Size(84, 20);
+            filterToolStripMenuItem.Size = new Size(45, 20);
             filterToolStripMenuItem.Text = "Filter";
             // 
             // byDomainToolStripMenuItem
             // 
             byDomainToolStripMenuItem.Name = "byDomainToolStripMenuItem";
-            byDomainToolStripMenuItem.Size = new Size(127, 22);
+            byDomainToolStripMenuItem.Size = new Size(143, 22);
             byDomainToolStripMenuItem.Text = "By Domain";
             byDomainToolStripMenuItem.Click += byDomainToolStripMenuItem_Click;
             // 
             // byUsernameToolStripMenuItem
             // 
             byUsernameToolStripMenuItem.Name = "byUsernameToolStripMenuItem";
-            byUsernameToolStripMenuItem.Size = new Size(127, 22);
+            byUsernameToolStripMenuItem.Size = new Size(143, 22);
             byUsernameToolStripMenuItem.Text = "By Username";
             byUsernameToolStripMenuItem.Click += byUsernameToolStripMenuItem_Click;
             // 
             // byPasswordToolStripMenuItem
+            // 
             byPasswordToolStripMenuItem.Name = "byPasswordToolStripMenuItem";
-            byPasswordToolStripMenuItem.Size = new Size(127, 22);
+            byPasswordToolStripMenuItem.Size = new Size(143, 22);
             byPasswordToolStripMenuItem.Text = "By Password";
             byPasswordToolStripMenuItem.Click += byPasswordToolStripMenuItem_Click;
-            //
-            //refreshToolStripMenuItem
+            // 
+            // refreshToolStripMenuItem
+            // 
             refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            refreshToolStripMenuItem.Size = new Size(84, 20);
+            refreshToolStripMenuItem.Size = new Size(58, 20);
             refreshToolStripMenuItem.Text = "Refresh";
             refreshToolStripMenuItem.Click += refreshToolStripMenuItem_Click;
-            //
             // 
-            // Form1
+            // ManagerWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -205,13 +211,14 @@
             Controls.Add(DomainBox);
             Controls.Add(Items);
             Controls.Add(menuStrip1);
-            Name = "Form1";
+            Name = "ManagerWindow";
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
+
 
         #endregion
         private ListBox Items;
